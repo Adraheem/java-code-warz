@@ -7,15 +7,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArrayOutlierTest {
-    private ArrayOutlier array;
-
-    @BeforeEach
-    void setUp(){
-        array = new ArrayOutlier();
-    }
 
     @Test
-    void canTakeInArray(){
+    void canDetectOdd(){
         List<Integer> nums = new ArrayList<>();
         nums.add(2);
         nums.add(3);
@@ -24,6 +18,18 @@ class ArrayOutlierTest {
         nums.add(8);
         nums.add(10);
         assertEquals(3, ArrayOutlier.detect(nums));
+    }
+
+    @Test
+    void canDetectEven(){
+        List<Integer> nums = new ArrayList<>();
+        nums.add(3);
+        nums.add(6);
+        nums.add(5);
+        nums.add(7);
+        nums.add(9);
+        nums.add(11);
+        assertEquals(6, ArrayOutlier.detect(nums));
     }
 
 }
